@@ -10,6 +10,7 @@ import (
 // 初始化环境变量
 func init() {
 	initializers.LoadEnv()
+	initializers.ConnectDB()
 }
 
 func main() {
