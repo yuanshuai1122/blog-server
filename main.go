@@ -14,5 +14,6 @@ func init() {
 
 func main() {
 	fmt.Println("Hello Blog!")
-	router.UserRouterStart()
+	r := router.UserRouterStart()
+	r.Run()
 }

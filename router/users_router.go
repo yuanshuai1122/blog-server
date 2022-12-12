@@ -6,10 +6,11 @@ import (
 )
 
 /*
-	用户相关路由
+用户相关路由
 */
-func UserRouterStart() {
-	e := gin.Default()
+func UserRouterStart() *gin.Engine {
+	router := gin.Default()
 	// 查询用户接口
-	e.GET("/user", controller.User)
+	router.GET("/user", controller.User)
+	return router
 }
