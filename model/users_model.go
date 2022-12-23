@@ -1,10 +1,13 @@
 package model
 
-import "blog-server/initializer"
+import (
+	"blog-server/initializer"
+	"time"
+)
 
 type User struct {
 	// 主键id
-	Id int32 `json:"id"`
+	Id uint64 `json:"id"`
 	// 用户名
 	Username string `json:"username"`
 	// 用户密码
@@ -18,11 +21,11 @@ type User struct {
 	// 邮箱
 	Email string `json:"email"`
 	//// 逻辑删除 0：正常 1：删除
-	IsDeleted string `json:"isDeleted"`
+	IsDeleted string `json:"is_deleted"`
 	// 创建时间
-	CreateTime string `json:"createTime"`
+	CreateTime time.Time `json:"create_time"`
 	// 修改时间
-	UpdateTime string `json:"updateTime"`
+	UpdateTime time.Time `json:"update_time"`
 }
 
 /*
