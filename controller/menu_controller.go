@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// Menus 获取菜单列表
 func Menus(c *gin.Context) {
 	var menus model.Menu
 

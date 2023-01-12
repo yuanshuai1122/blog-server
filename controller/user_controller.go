@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// User 获取用户信息
 func User(c *gin.Context) {
 	var user model.User
 

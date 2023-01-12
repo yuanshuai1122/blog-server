@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// PostsPage 分页查询文章列表
 func PostsPage(c *gin.Context) {
 	var p model.Page
 	if c.ShouldBindQuery(&p) != nil {

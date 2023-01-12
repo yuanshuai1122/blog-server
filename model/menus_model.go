@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// Menu 菜单结构体
 type Menu struct {
 	// 主键id
 	Id uint64 `json:"id"`

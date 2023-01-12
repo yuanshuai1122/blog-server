@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// User 用户结构体
 type User struct {
 	// 主键id
 	Id uint64 `json:"id"`

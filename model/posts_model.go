@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// Post 文章列表结构体
 type Post struct {
 	// id
 	Id uint64 `json:"id"`
