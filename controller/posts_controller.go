@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"blog-server/errno"
 	"blog-server/model"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -9,12 +10,7 @@ import (
 func PostsPage(c *gin.Context) {
 	var p model.Page
 	if c.ShouldBindQuery(&p) != nil {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"code": -1,
-			"msg":  "not found",
-			"data": "",
-			"err":  "参数错误",
-		})
+		c.JSON(http.StatusUnauthorized, errno.ErrParam)
 		return
 	}
 	if p.PageNum <= 0 {
@@ -23,14 +19,10 @@ func PostsPage(c *gin.Context) {
 	var post model.Post
 	result, err := post.GetPostsByPage(p)
 	if err != nil {
+		c.JSON(http.StatusOK, errno.ErrServer)
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"code": 1,
-		"msg":  "success",
-		"data": result,
-		"err":  "",
-	})
+	c.JSON(http.StatusOK, errno.OK.WithData(result))
 
 }
